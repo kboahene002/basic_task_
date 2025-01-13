@@ -6,7 +6,7 @@ function App() {
   return (
 
     <>
-      <Task/>
+      <Task title="Task Lists"/>
     </>
     
   );
