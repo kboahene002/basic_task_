@@ -1,11 +1,13 @@
 import { useState } from "react";
 function Task() {
-    let [tasks, setTasks] = useState([
+    const myTask = [
         {title:"Complete todays assignment", id:1, completed: false},
         {title:"Get groceries from the shop", id:2, completed: false},
         {title:"Learn React js from scratch", id:3, completed: false},
         {title:"lets Pray and Hope for success", id:4, completed: true}
-    ]);
+    ];
+    const [tasks, setTasks] = useState(myTask);
+    const [taskInput , setTaskInput] = useState("");
     function changeStatus(taskid){
         // let new_task = tasks.filter( (task) => task.id !== taskid);
         // setTasks(new_task);
@@ -20,10 +22,21 @@ function Task() {
     }
 
     function addTask(){
-        let newtask = {title:document.querySelector(".title_input").value, id:tasks.length+1, completed: false};
+        if(taskInput === ""){
+            alert("Please enter a task");
+            return
+        };
+        let newtask = {title:taskInput, id:tasks.length+1, completed: false};
         // console.log(newtask);
         setTasks([...tasks, newtask]);
-        // console.log(tasks);
+        
+        clearInput();
+    }
+
+    let handleInput = (event) => {setTaskInput(event.target.value)};
+    function clearInput(){
+        setTaskInput("");
+
     }
     return (
         <div>
@@ -43,10 +56,9 @@ function Task() {
                 
                 <div className="add_task"> 
                
-                        <input placeholder="Add Task" className="title_input" type="text" />
+                        <input placeholder="Add Task" className="title_input" value={taskInput} onChange={handleInput} type="text" />
                         <button className="button addButton" onClick={()=>addTask()}>Add</button>
                    
-                    
                 </div>
             </div>
         </div>
