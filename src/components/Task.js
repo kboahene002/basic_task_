@@ -18,6 +18,13 @@ function Task() {
         });
         setTasks(new_task);
     }
+
+    function addTask(){
+        let newtask = {title:document.querySelector(".title_input").value, id:tasks.length+1, completed: false};
+        // console.log(newtask);
+        setTasks([...tasks, newtask]);
+        // console.log(tasks);
+    }
     return (
         <div>
             <div className="main_div">
@@ -27,12 +34,20 @@ function Task() {
                     {tasks.map(task => (
                         <li className={task.completed == false ? "flex-item active" : "flex-item inactive"} key={task.id}>
                             <h4 className="task_title">{task.title}</h4>
-                            <button className={task.completed == false ? "complete" : "completed"} onClick={() => changeStatus(task.id)}>
+                            <button className={task.completed == false ? "complete button" : "completed button"} onClick={() => changeStatus(task.id)}>
                                     {task.completed == false ? "Complete" : " Completed"}
                             </button>
                         </li>
                     ))}
                 </ul>
+                
+                <div className="add_task"> 
+               
+                        <input placeholder="Add Task" className="title_input" type="text" />
+                        <button className="button addButton" onClick={()=>addTask()}>Add</button>
+                   
+                    
+                </div>
             </div>
         </div>
     );

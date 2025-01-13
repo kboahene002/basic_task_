@@ -33,7 +33,7 @@
     justify-content: space-between;
     text-decoration:none;
 }
-button{
+.button{
     padding:9px;
     background-color: rgba(8, 8, 8, 0.605);
     color: #fff;
@@ -67,4 +67,26 @@ button{
 .inactive{ 
     border-bottom: 0.2px solid rgba(20, 234, 16, 0.601) ;
 
+}
+
+/* Add Task */
+.add_task{
+    display:flex;
+    /* border:1px solid red; */
+    flex-direction:row;
+    margin:20px auto;
+    /* box-shadow:rgba(0, 0, 0, 0.379) 1px 2px 4px; */
+    border-radius: 10px;
+    justify-content: space-between;
+    padding:15px;
+}
+
+input{
+    border-radius:5px;
+    border:1px solid rgba(0, 0, 0, 0.379);
+    padding:5px;
+    width:70%
+}
+.addButton{
+    background-color: rgb(58, 153, 58);
 }
