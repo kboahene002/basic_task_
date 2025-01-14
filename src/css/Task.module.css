@@ -24,6 +24,10 @@
 
 
 .hide{
-    animation: fadeOut 1s ;
-    /* display:none; */
+    /* animation: fadeOut 1s ; */
+    display:none;
+}
+
+.show{
+  display:block;
 }
