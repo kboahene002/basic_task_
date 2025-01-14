@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "../css/TaskCard.module.css";
 const TaskCard = (props) => {
   return (
     <li
@@ -8,7 +8,7 @@ const TaskCard = (props) => {
       }
       
     >
-      <h4 className="task_title">{props.task.title}</h4>
+      <h4 className={styles.task_title} id="task_title">{props.task.title}</h4>
       <button
         className={
           props.task.completed == false ? "complete button" : "completed button"

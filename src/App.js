@@ -1,14 +1,14 @@
-import Task from '../src/components/Task';
-// import logo from './logo.svg';
-import '../src/css/task.css';
+import Task from "../src/components/Task";
+import Header from "../src/components/Header";
 
 function App() {
   return (
-
     <>
-      <Task title="Task Lists"/>
+      <Header />
+      <main>
+        <Task title="Task Lists" />
+      </main>
     </>
-    
   );
 }
 

@@ -1,0 +1,29 @@
+.main_div_heading{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:17px;
+}
+@keyframes fadeOut {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50%{
+        transform:translateY(-50%);
+        opacity:0.5
+    }
+    100% {
+      opacity:0;
+
+      transform:translateY(-100%);
+     display:none;
+
+    }
+  }
+
+
+.hide{
+    animation: fadeOut 1s ;
+    /* display:none; */
+}
